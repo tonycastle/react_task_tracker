@@ -4,8 +4,9 @@ import Button from "./Button";
 const Header = ({ title }) => {
   return (
     <header className="Header">
-      <h1>{title}</h1>
-      <Button />
+      <h1>
+        {title} <Button />
+      </h1>
     </header>
   );
 };

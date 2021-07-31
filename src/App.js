@@ -11,10 +11,17 @@ function App() {
     { id: 4, description: "Watch TV", time: "17:00" },
   ]);
 
+  const deleteTask = (id) => {
+    const newTasks = tasks.filter((task) => {
+      return task.id !== id;
+    });
+    setTasks(newTasks);
+  };
+
   return (
     <div className="container">
       <Header title="Task Tracker"></Header>
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onClick={deleteTask} />
     </div>
   );
 }
