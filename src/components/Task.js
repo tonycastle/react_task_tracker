@@ -1,11 +1,13 @@
 import { FaTimes } from "react-icons/fa";
 
-const Task = ({ task, onClick }) => {
+const Task = ({ task, onClick, onDoubleClick }) => {
   return (
-    <div className="task">
+    <div
+      onDoubleClick={() => onDoubleClick(task.id)}
+      className={`task ${task.reminder ? "reminder" : ""}`}
+    >
       <h3>
-        {" "}
-        {task.description}{" "}
+        {task.text}
         <FaTimes style={{ color: "red" }} onClick={() => onClick(task.id)} />
       </h3>
 
